@@ -30,3 +30,7 @@ body{font-size:18px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLe
   text-align: left;
 }
 .phone-inline:hover { text-decoration: underline; }
+
+
+/* Release 1.4 legal pages */
+.legal-section{max-width:980px;padding-top:96px;padding-bottom:110px}.legal-document{max-width:780px;margin:0 auto;background:#fff}.legal-document h1{color:var(--ink);font-size:clamp(2.3rem,5vw,4rem);margin-bottom:28px}.legal-document h2{font-family:Georgia,'Times New Roman',serif;color:var(--ink);font-size:clamp(1.45rem,3vw,2rem);margin:52px 0 14px;padding-top:6px}.legal-document h3{font-size:1.18rem;margin:30px 0 10px;color:var(--ink)}.legal-document p{margin:0 0 18px;font-size:1rem;line-height:1.78}.legal-intro{font-size:1.08rem!important;color:var(--muted);border-left:3px solid var(--gold);padding-left:20px;margin-bottom:34px!important}.legal-document strong{color:var(--ink)}@media(max-width:640px){.legal-section{padding-top:70px;padding-bottom:76px}.legal-document h2{margin-top:38px}.legal-intro{padding-left:16px}}
