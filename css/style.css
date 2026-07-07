@@ -20,3 +20,13 @@ body{font-size:18px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLe
 .hero-media{z-index:0!important;}
 .hero-overlay{z-index:1!important;}
 .hero-content{z-index:2!important;}
+.phone-inline {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+.phone-inline:hover { text-decoration: underline; }
