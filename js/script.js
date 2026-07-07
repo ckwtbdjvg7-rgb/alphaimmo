@@ -103,3 +103,42 @@ if (grid && lb) {
     if (e.key === 'ArrowLeft') prev();
   });
 }
+
+// Web3Forms: submit without leaving the site and redirect to local thank-you page.
+// This avoids Web3Forms' default success page and works on both alphaimmo.pages.dev and alphaimmo.ch.
+document.querySelectorAll('form[action="https://api.web3forms.com/submit"]').forEach(form => {
+  form.addEventListener('submit', async (event) => {
+    if (!window.fetch || !window.FormData) return;
+    event.preventDefault();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton ? submitButton.textContent : '';
+
+    try {
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Wird gesendet …';
+      }
+
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || 'Form submission failed');
+      }
+
+      window.location.href = new URL('danke.html', window.location.href).href;
+    } catch (error) {
+      alert('Die Anfrage konnte leider nicht gesendet werden. Bitte versuchen Sie es später nochmals oder kontaktieren Sie uns telefonisch.');
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    }
+  });
+});
+
