@@ -23,23 +23,65 @@
   <link rel="preload" as="image" href="img/hero-01.jpg">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Alpha Immobilien GmbH",
-    "url": "https://alphaimmo.ch/",
-    "logo": "https://alphaimmo.ch/img/logo_alpha_immo.png",
-    "image": "https://alphaimmo.ch/img/hero-01.jpg",
-    "telephone": "+41767621354",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Im Walder 12",
-      "postalCode": "8008",
-      "addressLocality": "Zürich",
-      "addressCountry": "CH"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://alphaimmo.ch/#organization",
+      "name": "Alpha Immobilien GmbH",
+      "legalName": "Alpha Immobilien GmbH",
+      "url": "https://alphaimmo.ch/",
+      "logo": "https://alphaimmo.ch/img/logo_alpha_immo.png",
+      "image": "https://alphaimmo.ch/img/hero-01.jpg",
+      "description": "Alpha Immobilien GmbH begleitet Bauherrschaften in der Schweiz von der ersten Idee bis zur schlüsselfertigen Übergabe hochwertiger Wohnhäuser.",
+      "telephone": "+41767621354",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Im Walder 12",
+        "postalCode": "8008",
+        "addressLocality": "Zürich",
+        "addressCountry": "CH"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Schweiz"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+41767621354",
+        "contactType": "customer service",
+        "areaServed": "CH",
+        "availableLanguage": [
+          "de-CH"
+        ]
+      }
     },
-    "areaServed": "CH"
-  }
+    {
+      "@type": "WebSite",
+      "@id": "https://alphaimmo.ch/#website",
+      "url": "https://alphaimmo.ch/",
+      "name": "Alpha Immobilien GmbH",
+      "publisher": {
+        "@id": "https://alphaimmo.ch/#organization"
+      },
+      "inLanguage": "de-CH"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alphaimmo.ch/#webpage",
+      "url": "https://alphaimmo.ch/",
+      "name": "Alpha Immobilien GmbH | Schlüsselfertig bauen in der Schweiz",
+      "isPartOf": {
+        "@id": "https://alphaimmo.ch/#website"
+      },
+      "about": {
+        "@id": "https://alphaimmo.ch/#organization"
+      },
+      "inLanguage": "de-CH"
+    }
+  ]
+}
   </script>
 </head>
 <body>

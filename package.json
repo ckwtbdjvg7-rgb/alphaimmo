@@ -1,6 +1,6 @@
 {
   "name": "alphaimmo-website",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "private": true,
   "description": "Static website for Alpha Immobilien GmbH deployed with Cloudflare Workers Static Assets.",
   "scripts": {
