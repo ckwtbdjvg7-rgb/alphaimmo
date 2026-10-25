@@ -1,6 +1,22 @@
 const realPhone = '+41767621354';
 const visiblePhone = '+41 76 762 13 54';
 
+// Die Adresse wird erst beim ersten Klick zusammengesetzt und angezeigt.
+const emailCodes = [111, 102, 102, 105, 99, 101, 64, 97, 108, 112, 104, 97, 112, 114, 111, 106, 101, 99, 116, 115, 46, 115, 105, 116, 101];
+
+document.querySelectorAll('.email-button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const email = String.fromCharCode(...emailCodes);
+    if (btn.dataset.emailVisible !== 'true') {
+      btn.textContent = email;
+      btn.dataset.emailVisible = 'true';
+      btn.setAttribute('aria-label', 'E-Mail an ' + email + ' senden');
+    } else {
+      window.location.href = 'mailto:' + email;
+    }
+  });
+});
+
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
